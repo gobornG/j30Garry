@@ -72,3 +72,14 @@ const newComments = [
     ...comments.slice(index + 1)
 ];
 
+//another function to find text that equals "Love this!"
+
+const specificText = comments.find(word => word.text === 'Love this!');
+
+console.log({specificText});
+
+//another function to find the index of name of person who was born in the year 2015
+
+const wasBorn = people.some(person => person.year === 2015);
+
+console.log({wasBorn});
