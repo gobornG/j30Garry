@@ -15,4 +15,63 @@ function makeGreen() {
 }
 
 // Regular
-console.log("hello");
+console.log('hello');
+
+//Interpolated
+console.log('Hello I am a %s string!', '+poo');
+// console.log(`Hello I am ${var}`); --es6 method
+
+//Styled
+console.log('%cI am some great text', 'font-size:50px; background:red; text-shadow: 10px 10px 0 blue');
+
+//Warming
+console.warn('Oh NOOO');
+
+//Error :|
+console.error('Crap!');
+
+//Info
+console.info('Crocodiles eat 3-4 people per year');
+
+//Testing
+const p = document.querySelector('p');
+
+console.assert(1 === 2, 'You did not select the right Element');
+
+console.assert(p.classList.contains('ouch'), 'That is wrong!');
+
+//Clearing
+console.clear();
+
+//Viewing DOM Elements
+console.log(p);
+console.dir(p);
+
+console.clear();
+
+//Grouping together
+dogs.forEach(dog => {
+    console.groupCollapsed(`${dog.name}`);
+    console.log(`This is ${dog.name}`);
+    console.log(`${dog.name} is ${dog.age} years old`);
+    console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+    console.groupEnd(`{dog.name}`);
+});
+
+//Counting
+console.count('Garry');
+console.count('Garry');
+console.count('Garry');
+console.count('Ben');
+console.count('Garry');
+
+//Timing
+console.time('fetching data');
+fetch('https://api.github.com/users/wesbos')
+    .then(data => data.json())
+    .then(data => {
+        console.timeEnd('done fetching data');
+        console.log(data);
+    });
+
+console.table(dogs);
